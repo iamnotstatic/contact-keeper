@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ContactState>
       <Router>
-        <Fragment className="app">
+        <div className="app">
           <Navbar />
           <div className="container">
             <Switch>
@@ -19,7 +19,7 @@ const App = () => {
               <Route exact path="/about" component={About} />
             </Switch>
           </div>
-        </Fragment>
+        </div>
       </Router>
     </ContactState>
   );

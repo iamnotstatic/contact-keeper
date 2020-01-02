@@ -11,7 +11,7 @@ const ContactItem = ({ contact }) => {
           style={{ float: 'right' }}
           className={
             'badge ' +
-            (type === 'Professional' ? 'badge-success' : 'badge-primary')
+            (type === 'professional' ? 'badge-success' : 'badge-primary')
           }
         >
           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -37,8 +37,7 @@ const ContactItem = ({ contact }) => {
   );
 };
 
-
 ContactItem.protoTypes = {
-    contact: PropTypes.object.isRequired,
-}
+  contact: PropTypes.object.isRequired
+};
 export default ContactItem;
