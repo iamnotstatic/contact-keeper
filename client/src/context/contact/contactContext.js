@@ -2,4 +2,4 @@ import { createContext } from 'react';
 
 const contactContext = createContext();
 
-module.exports = contactContext;
+export default contactContext;
