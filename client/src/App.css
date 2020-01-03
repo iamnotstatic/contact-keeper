@@ -385,6 +385,7 @@ table th {
 }
 
 /* Animation (Add After) */
+
 .item-enter {
   opacity: 0;
 }
