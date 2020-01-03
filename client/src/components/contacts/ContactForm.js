@@ -1,8 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ContactContext from '../../context/contact/contactContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
+  const alertContext = useContext(AlertContext);
+
+  const { setAlert } = alertContext;
   const { addContact, updateContact, clearCurrent, current } = contactContext;
 
   useEffect(() => {
@@ -16,6 +20,7 @@ const ContactForm = () => {
         type: 'personal'
       });
     }
+    // eslint-disable-next-line
   }, [contactContext, current]);
   const [contact, setContact] = useState({
     name: '',
@@ -31,6 +36,9 @@ const ContactForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    if (name === '' || email === '') {
+      setAlert('Fields are required', 'danger');
+    }
     if (current === null) {
       addContact(contact);
     } else {
@@ -61,6 +69,7 @@ const ContactForm = () => {
         name="name"
         value={name}
         onChange={onChange}
+        required
       />
       <input
         type="email"
@@ -68,6 +77,7 @@ const ContactForm = () => {
         name="email"
         value={email}
         onChange={onChange}
+        required
       />
       <input
         type="text"
