@@ -1,5 +1,4 @@
 {
-    "mongoURI": "mongodb://127.0.0.1:27017/contact-keeper",
-    "jwtSecret": "contact-keeper-api"
-  }
-  
+  "mongoURI": "mongodb+srv://taskapp:09096548039abdul@cluster0-phfn4.mongodb.net/contact-keeper?retryWrites=true",
+  "jwtSecret": "contact-keeper-api"
+}
